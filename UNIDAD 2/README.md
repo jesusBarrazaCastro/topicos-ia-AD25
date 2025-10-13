@@ -104,8 +104,10 @@ Cada archivo contiene:
 
 ---
 ## 🗺️ Visualización del mapa
-(En esta sección se incluirá el script de visualización. Este mapa mostrará las rutas optimizadas sobre un mapa de Culiacán, utilizando `folium`.  
-Cada Centro de Distribución se marcará con un color distinto y las rutas se dibujarán conectando las tiendas asignadas.)
+En esta sección se incluye el script de visualización. Este mapa mostrará las rutas optimizadas sobre un mapa de Culiacán, utilizando `folium`.  
+Cada Centro de Distribución se marcará con un color distinto y las rutas se dibujarán conectando las tiendas asignadas.
+
+[Script de generacion del mapa](https://github.com/jesusBarrazaCastro/topicos-ia-AD25/blob/main/UNIDAD%202/crear_mapa.py)
 <img width="990" height="834" alt="Image" src="https://github.com/user-attachments/assets/435c96d4-f2cd-47ac-9d54-0e56cb1350fd" />
 ---
 
