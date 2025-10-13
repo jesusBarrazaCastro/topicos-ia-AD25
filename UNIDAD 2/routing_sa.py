@@ -48,23 +48,33 @@ def cargar_datos(path_ubicaciones, path_costos, path_distancias):
 # -----------------------------------------------------------------------------
 # 3. CREACIÓN DE LA SOLUCIÓN INICIAL (MÉTODO POR CLUSTER)
 # -----------------------------------------------------------------------------
+
 def crear_solucion_inicial_por_cluster(df_ubicaciones, depots, matriz_distancias):
-    print("Creando solución inicial por clúster (tiendas asignadas al CD más cercano)...")
+    print("Creando solución inicial por clúster...")
+    # Identifica los índices de las tiendas (nodos que no son CD)
     indices_tiendas = list(set(df_ubicaciones.index) - set(depots))
-    
     clusters = {depot_idx: [] for depot_idx in depots}
-    
+    # Asigna cada tienda al CD con la distancia mínima
     for tienda_idx in indices_tiendas:
-        distancias_a_depots = matriz_distancias[tienda_idx, depots]
-        depot_mas_cercano_idx_en_lista = np.argmin(distancias_a_depots)
-        depot_real_idx = depots[depot_mas_cercano_idx_en_lista]
-        clusters[depot_real_idx].append(tienda_idx)
+        distancias_a_depots = matriz_distancias[tienda_idx, depots] # Distancias de la tienda a todos los CD
+        depot_mas_cercano_idx_en_lista = np.argmin(distancias_a_depots) # Encuentra el índice del CD más cercano en la lista 'depots'
+        depot_real_idx = depots[depot_mas_cercano_idx_en_lista]# Obtiene el índice real del CD
+        clusters[depot_real_idx].append(tienda_idx)# Agrupa la tienda al CD más cercano
         
     solucion_inicial = []
+    
+    # Construye las rutas para cada clúster (CD)
     for depot_idx, tiendas_asignadas in clusters.items():
         if tiendas_asignadas:
-            random.shuffle(tiendas_asignadas)
-            ruta = [depot_idx] + tiendas_asignadas + [depot_idx]
+            
+            # Ordena las tiendas asignadas por su distancia al CD (del más cercano al más lejano)
+            tiendas_ordenadas_por_distancia = sorted(
+                tiendas_asignadas,
+                key=lambda tienda: matriz_distancias[depot_idx, tienda] 
+            )
+            
+            # Formato de la ruta: [CD, Tienda_1, ..., Tienda_N, CD]
+            ruta = [depot_idx] + tiendas_ordenadas_por_distancia + [depot_idx]
             solucion_inicial.append(ruta)
             
     return solucion_inicial
@@ -86,7 +96,7 @@ def generar_vecino(rutas):
         return []
     
     nuevas_rutas = [r.copy() for r in rutas]
-    tipo_movimiento = random.choice(['swap', '2opt', 'relocate'])
+    tipo_movimiento = random.choice(['swap', '2opt',])
 
     if tipo_movimiento == 'swap' and len(nuevas_rutas) > 1:
         idx_ruta1, idx_ruta2 = random.sample(range(len(nuevas_rutas)), 2)
@@ -103,22 +113,6 @@ def generar_vecino(rutas):
             i, j = random.sample(range(1, len(ruta) - 1), 2)
             if i > j: i, j = j, i
             ruta[i:j+1] = list(reversed(ruta[i:j+1]))
-
-    elif tipo_movimiento == 'relocate':
-        # SOLUCIÓN: Solo mover tiendas si la ruta de origen tiene más de 1 tienda
-        rutas_con_multiples_tiendas = [i for i, r in enumerate(nuevas_rutas) if len(r) > 3]
-        if len(rutas_con_multiples_tiendas) >= 1 and len(nuevas_rutas) > 1:
-            idx_origen = random.choice(rutas_con_multiples_tiendas)
-            idx_destino = random.choice([i for i in range(len(nuevas_rutas)) if i != idx_origen])
-            ruta_origen, ruta_destino = nuevas_rutas[idx_origen], nuevas_rutas[idx_destino]
-            
-            # Seleccionar una tienda (no los depósitos)
-            idx_tienda = random.randint(1, len(ruta_origen) - 2)
-            tienda_movida = ruta_origen.pop(idx_tienda)
-            
-            # Insertar en posición aleatoria (entre depósitos)
-            idx_insercion = random.randint(1, len(ruta_destino) - 1)
-            ruta_destino.insert(idx_insercion, tienda_movida)
     
     # SOLUCIÓN CRÍTICA: NO eliminar rutas, mantener todas incluso si solo tienen [depot, depot]
     return nuevas_rutas  # ← CAMBIO CLAVE: quitar el filtro
