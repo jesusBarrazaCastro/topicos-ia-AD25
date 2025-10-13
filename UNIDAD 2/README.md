@@ -105,7 +105,7 @@ Cada archivo contiene:
 ---
 
 ## 🗺️ Visualización del mapa
-(En esta sección se incluirá el script de visualización. Este mapa mostrará las rutas optimizadas sobre un mapa de Culiacán, utilizando `matplotlib` o `folium`.  
+(En esta sección se incluirá el script de visualización. Este mapa mostrará las rutas optimizadas sobre un mapa de Culiacán, utilizando `folium`.  
 Cada Centro de Distribución se marcará con un color distinto y las rutas se dibujarán conectando las tiendas asignadas.)
 
 ---
