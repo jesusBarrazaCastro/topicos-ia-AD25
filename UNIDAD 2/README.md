@@ -103,11 +103,10 @@ Cada archivo contiene:
 - **resumen_optimizacion.csv:** costo total, distancia total y número de vehículos.
 
 ---
-
 ## 🗺️ Visualización del mapa
 (En esta sección se incluirá el script de visualización. Este mapa mostrará las rutas optimizadas sobre un mapa de Culiacán, utilizando `folium`.  
 Cada Centro de Distribución se marcará con un color distinto y las rutas se dibujarán conectando las tiendas asignadas.)
-
+<img width="990" height="834" alt="Image" src="https://github.com/user-attachments/assets/435c96d4-f2cd-47ac-9d54-0e56cb1350fd" />
 ---
 
 ## 💬 Conclusiones
