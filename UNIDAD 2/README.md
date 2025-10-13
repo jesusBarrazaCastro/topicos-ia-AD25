@@ -56,7 +56,8 @@ En este contexto:
 
 ---
 
-## 🧠 Estructura del código (`routing_sa_FINAL.py`)
+## 🧠 Estructura del código (`routing_sa.py`)
+[Click aqui para ver el codigo 🔗👈](https://github.com/jesusBarrazaCastro/topicos-ia-AD25/blob/main/UNIDAD%202/routing_sa.py)
 
 | Sección | Descripción |
 |----------|--------------|
