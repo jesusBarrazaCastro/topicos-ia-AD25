@@ -124,9 +124,9 @@ Estas pruebas demuestran que el algoritmo se adapta correctamente a diferentes c
 
 | Escenario | Nº de Sensores | Mejor Costo | Observaciones |
 |------------|----------------|--------------|----------------|
-| Base | 5 | 0.024 | Cobertura uniforme en todo el campo |
-| Alta Salinidad | 5 | 0.018 | Sensores concentrados en zonas salinas |
-| Pendiente Alta | 5 | 0.021 | Sensores distribuidos según la elevación |
+| Base | 4 | 0.024 | Cobertura uniforme en todo el campo |
+| Alta Salinidad | 4 | 0.018 | Sensores concentrados en zonas salinas |
+| Pendiente Alta | 4 | 0.021 | Sensores distribuidos según la elevación |
 
 **Conclusión:** el PSO converge de forma estable y genera configuraciones con sentido agronómico.
 
