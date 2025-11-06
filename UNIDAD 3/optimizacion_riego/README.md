@@ -40,8 +40,8 @@ El **algoritmo PSO** ofrece una solución metaheurística capaz de explorar efic
 
 | Archivo | Descripción |
 |----------|--------------|
-| `PSO_optimizacion_riego.ipynb` | Notebook principal (implementación completa) |
-| `README.md` | Documento explicativo del proyecto (este archivo) |
+| `PSO_optimizacion_riego.ipynb` | Notebook principal (implementación completa y pruebas funcionales) |
+| `README.md` | Documentacion del proyecto (este archivo) |
 
 ---
 
