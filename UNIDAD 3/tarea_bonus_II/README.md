@@ -1,5 +1,10 @@
 # 🧭 Informe: Solución del problema del vendedor ambulante (TSP) utilizando algoritmos genéticos
 
+## 👨‍💻 Autores
+Proyecto desarrollado por **Jesús Alberto Barraza Castro y Jesús Guadalupe Wong Camacho**  
+TecNM Campus Culiacán — Ingeniería en Tecnologías de la Información y Comunicaciones  
+2025
+
 ## 📖 Introducción
 
 El **Problema del Vendedor Viajero (TSP, por sus siglas en inglés)** es uno de los desafíos más clásicos en el campo de la optimización combinatoria.  
