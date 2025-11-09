@@ -372,6 +372,28 @@ if generaciones_sin_mejora > 100:
 
 ### Caso de Estudio: 15 Ciudades Europeas
 
+**Ciudades:**
+```python
+# Crear lista de ciudades
+    lista_ciudades = [
+        Municipio(40.4168, -3.7038),    # Madrid, España
+        Municipio(48.8566, 2.3522),     # París, Francia
+        Municipio(41.9028, 12.4964),    # Roma, Italia
+        Municipio(52.5200, 13.4050),    # Berlín, Alemania
+        Municipio(51.5074, -0.1278),    # Londres, Reino Unido
+        Municipio(40.6401, 22.9444),    # Tesalónica, Grecia
+        Municipio(52.2297, 21.0122),    # Varsovia, Polonia
+        Municipio(59.3293, 18.0686),    # Estocolmo, Suecia
+        Municipio(48.2082, 16.3738),    # Viena, Austria
+        Municipio(50.0755, 14.4378),    # Praga, República Checa
+        Municipio(45.4642, 9.1900),     # Milán, Italia
+        Municipio(53.3498, -6.2603),    # Dublín, Irlanda
+        Municipio(60.1699, 24.9384),    # Helsinki, Finlandia
+        Municipio(47.4979, 19.0402),    # Budapest, Hungría
+        Municipio(37.9838, 23.7275),    # Atenas, Grecia
+    ]
+```
+
 **Configuración:**
 ```python
 tamano_poblacion = 100
