@@ -406,10 +406,9 @@ num_generaciones = 500
 
 | Métrica | Valor |
 |---------|-------|
-| Distancia inicial | 87.34 |
-| Distancia final | 79.12 |
-| Mejora total | 9.41% |
-| Generaciones sin mejora (máx) | 67 |
-| Tiempo de ejecución | ~3.5 segundos |
+| Distancia inicial | 181.07 |
+| Distancia final | 161.3755 |
+| Mejora total | 10.88% |
+| Generaciones sin mejora (máx) | 55 |
 
 ---
